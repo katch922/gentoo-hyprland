@@ -14,10 +14,10 @@ gentoo-pipewire-launcher restart &
 gsettings set org.gnome.desktop.interface cursor-theme 'BreezeX-Light' &
 # Start mako notification daemon
 mako &
-# Start status bar
-waybar &
 # Start mail in bg
 #mailspring --password-store="gnome-libsecret" &
 thunderbird &
 # start hypridle
-hypridle
+hypridle &
+# Start status bar
+waybar
