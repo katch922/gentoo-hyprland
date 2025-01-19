@@ -31,10 +31,6 @@ window#waybar.solo {
     margin-left: 41px;
 }
 
-/* .modules-right > widget:last-child > #workspaces {
-    margin-right: 5px;
-} */
-
 .modules-right {
     background-color: rgba(145, 129, 117, 0.85);
     margin: 4px 17px 4px 0px;
@@ -66,6 +62,7 @@ button {
 }
 
 #workspaces button.urgent {
+    padding: 0px 20px;
     background-color: rgba(224, 44, 109, 0.85);
 }
 

@@ -15,7 +15,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'BreezeX-Light' &
 # Start mako notification daemon
 mako &
 # Start mail in bg
-#mailspring --password-store="gnome-libsecret" &
+mailspring --password-store="gnome-libsecret" &
 thunderbird &
 # start hypridle
 hypridle &
