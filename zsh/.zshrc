@@ -98,6 +98,10 @@ alias open-ports='ss -lpntu'
 #alias river='exec dbus-run-session river'
 alias sunset='hyprsunset -t 5000 &; disown;'
 alias sunrise='pkill hyprsunset'
+alias errfail='sudo dmesg -T --level=err,warn'
+alias font-fam='fc-list : family | sort'
+alias gpu-state='cat /sys/class/drm/card0/device/power_dpm_force_performance_level'
+alias wm-class='hyprctl clients | grep "class: [a-zA-Z@]"'
 
 # add login message
 printf "Welcome $USER to $HOST\n"
@@ -152,7 +156,7 @@ bindkey "\e[F" end-of-line
 
 # Add to PATH
 typeset -U path PATH
-path=('$HOME/go/bin' $path)
-path=('$HOME/.local/bin' $path);
+path=('/home/katch/go/bin' $path)
+path=('/home/katch/.local/bin' $path);
 path=('$NPM_CONFIG_PREFIX/bin' $path);
 export PATH
