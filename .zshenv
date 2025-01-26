@@ -10,8 +10,4 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export projects="$HOME/Black/Documents/Projects"
 export world="/var/lib/portage/world"
 export LESSHISTSIZE=0
-
-# Add locations to the PATH
-#typeset -U path PATH
-#path=(~/.local/bin $path)
-#export PATH
+export NPM_CONFIG_PREFIX=$HOME/.local
