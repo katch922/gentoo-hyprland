@@ -68,6 +68,7 @@ umask 0077
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 # set aliases
+alias dt='date "+%d %b %Y / %H:%M %Z"'
 alias lx='ls -X --color=auto'
 alias l='ls -CF --group-directories-first --color=auto'
 alias lh='ls -lh --color=auto'
@@ -91,11 +92,10 @@ alias free='free -h'
 alias dd='dd status="progress"'
 alias p='pwd ; ls -CF'
 alias d='date "+%d %b %Y"'
-alias dt='date "+%d %b %Y / %H:%M %Z"'
 alias mypass='cat /etc/passwd'
 alias ssh-git='eval "$(ssh-agent -s)" && ssh-add $HOME/.ssh/id_ed25519'
 alias open-ports='ss -lpntu'
-alias river='exec dbus-run-session river'
+#alias river='exec dbus-run-session river'
 alias sunset='hyprsunset -t 5000 &; disown;'
 alias sunrise='pkill hyprsunset'
 
@@ -149,3 +149,10 @@ bindkey "\e[F" end-of-line
 #		chmod 0700 "${XDG_RUNTIME_DIR}"
 #	fi
 #fi
+
+# Add to PATH
+typeset -U path PATH
+path=('$HOME/go/bin' $path)
+path=('$HOME/.local/bin' $path);
+path=('$NPM_CONFIG_PREFIX/bin' $path);
+export PATH
