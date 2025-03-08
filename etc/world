@@ -1,6 +1,7 @@
 app-admin/eclean-kernel
 app-admin/sudo
 app-admin/sysklogd
+app-arch/p7zip
 app-editors/vim
 app-editors/vscodium
 app-emulation/virt-manager
@@ -25,6 +26,7 @@ app-text/tree
 app-text/wgetpaste
 app-text/zathura
 app-text/zathura-pdf-mupdf
+dev-db/mysql
 dev-debug/gdb
 dev-util/android-tools
 dev-vcs/git
@@ -42,7 +44,7 @@ gui-apps/slurp
 gui-apps/waybar
 gui-libs/xdg-desktop-portal-hyprland
 gui-wm/hyprland
-mail-client/thunderbird
+mail-client/thunderbird-bin
 media-fonts/cascadia-code
 media-fonts/fontawesome
 media-fonts/fonts-meta
@@ -55,6 +57,7 @@ media-sound/pulsemixer
 media-video/mpv
 net-dns/bind-tools
 net-firewall/shorewall
+net-libs/nodejs
 net-misc/chrony
 net-misc/networkmanager
 net-wireless/bluez-tools

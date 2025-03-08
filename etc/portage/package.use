@@ -14,7 +14,7 @@ app-admin/sudo -sendmail -pam
 
 # Required by firefox
 >=media-libs/libvpx-1.13.1-r1 postproc
-www-client/firefox dbus
+www-client/firefox dbus pgo -X
 
 # Required by pfl
 >=sys-apps/util-linux-2.38.1 caps
@@ -50,12 +50,12 @@ gui-wm/hyprland -qtutils
 media-libs/libsdl2 gles2
 >=x11-libs/libdrm-2.4.120 video_cards_radeon
 dev-qt/qtgui egl jpeg
-dev-qt/qtbase cups opengl -ice
+dev-qt/qtbase cups opengl -ice -X
 dev-qt/qttools opengl
 
 # Fuzzel
 # add icon support
-gui-apps/fuzzel png
+gui-apps/fuzzel png svg
 
 # WAYBAR
 gui-apps/waybar experimental network pipewire wifi -upower
@@ -97,3 +97,21 @@ sys-devel/binutils pgo
 
 # Pipewire instead of pulseaudio
 media-video/mpv pipewire -pulseaudio
+
+# Remove X support for wayland native apps
+app-crypt/pinentry -X
+app-misc/fastfetch -X
+media-libs/gst-plugins-base -X
+net-libs/gtk-vnc -X
+
+# Enable udev rules for adb
+dev-util/android-tools udev
+
+# Enable NPM package manager
+net-libs/nodejs npm -snapshot
+
+# remove support for PAM
+gnome-base/gnome-keyring -pam
+
+# Thunderbird
+mail-client/thunderbird -X -rust-extensions
