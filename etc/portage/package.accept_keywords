@@ -36,9 +36,12 @@ gui-libs/wlroots ~amd64
 gui-libs/aquamarine ~amd64
 dev-libs/hyprgraphics ~amd64
 gui-apps/hyprsunset ~amd64
+dev-cpp/glaze ~amd64
 # Hyprland needs gcc 14 to build
 sys-devel/gcc ~amd64
 # Hyprland XDPH
 gui-libs/xdg-desktop-portal-hyprland ~amd64
 dev-cpp/sdbus-c++ ~amd64
 dev-libs/hyprlang ~amd64
+# BUGGED VERSION downgrade after it catches up
+sys-apps/xdg-desktop-portal ~amd64
