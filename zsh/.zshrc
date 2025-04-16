@@ -108,7 +108,7 @@ printf "Welcome $USER to $HOST\n"
 dt
 printf "Logged on users:"
 w | cut -d " " -f 1 - | grep -v USER | sort -u
-uptime
+uptime -p
 
 # Activate zsh-autosuggestions
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
@@ -145,18 +145,21 @@ bindkey "\eOd" backward-word
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
+# Configure a system without elogind
 # Set XDG_RUNTIME_DIR variable
 #if test -z "${XDG_RUNTIME_DIR}"; then
-#	export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
-#	if ! test -d "${XDG_RUNTIME_DIR}"; then
-#		mkdir "${XDG_RUNTIME_DIR}"
-#		chmod 0700 "${XDG_RUNTIME_DIR}"
-#	fi
+#    export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+#    if ! test -d "${XDG_RUNTIME_DIR}"; then
+#        mkdir "${XDG_RUNTIME_DIR}"
+#        chmod 0700 "${XDG_RUNTIME_DIR}"
+#    fi
 #fi
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Add to PATH
 typeset -U path PATH
 path=('/home/katch/go/bin' $path)
-path=('/home/katch/.local/bin' $path);
-path=('$NPM_CONFIG_PREFIX/bin' $path);
+path=('/home/katch/.local/bin' $path)
+path=('$NPM_CONFIG_PREFIX/bin' $path)
 export PATH
