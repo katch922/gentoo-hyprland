@@ -35,6 +35,7 @@ sys-devel/gcc objc pgo
 
 # For KVM use
 # required for virt-manager to operate; use pipewire instead of pulseaudio
+app-emulation/qemu QEMU_SOFTMMU_TARGETS: aarch64 x86_64 QEMU_USER_TARGETS: x86_64
 app-emulation/qemu usbredir spice virgl opengl -pipewire
 # Recommanded flags for libvirt
 app-emulation/libvirt pcap virt-network numa fuse macvtap vepa qemu policykit
@@ -118,3 +119,8 @@ gnome-base/gnome-keyring -pam
 
 # Thunderbird
 mail-client/thunderbird -X -rust-extensions
+
+# Java
+# Install headless, remove AWT crap
+dev-java/openjdk headless-awt
+virtual/jdk headless-awt
