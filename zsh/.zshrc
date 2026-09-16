@@ -103,12 +103,12 @@ alias font-fam='fc-list : family | sort'
 alias gpu-state='cat /sys/class/drm/card0/device/power_dpm_force_performance_level'
 alias wm-class='hyprctl clients | grep "class: [a-zA-Z@]"'
 
-# add login message
-printf "Welcome $USER to $HOST\n"
-dt
-printf "Logged on users:"
-w | cut -d " " -f 1 - | grep -v USER | sort -u
-uptime -p
+# Welcome message
+print -P "%F{magenta}Welcome %F{cyan}$USER%F{magenta} on %F{cyan}$HOST%F{reset} (%F{yellow}%D{%A, %d %B %Y}%F{reset})"
+print -P "%F{green}Uptime: %f$(uptime -p)"
+print -P "%F{green}Logged in: %f$(who | awk '{print $1}' | sort -u | tr '\n' ' ')"
+print -P "%F{green}Disk usage: %f$(df -h / | awk 'NR==2 {print $3" of "$2" ("$5")"}')"
+print -P "%F{green}Load: %f$(cut -d' ' -f1-3 /proc/loadavg)"
 
 # Activate zsh-autosuggestions
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
